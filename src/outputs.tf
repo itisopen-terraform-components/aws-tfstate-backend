@@ -1,34 +1,29 @@
-output "tfstate_backend_s3_bucket_domain_name" {
-  description = "Terraform state S3 bucket domain name"
-  value       = module.tfstate_backend.s3_bucket_domain_name
+output "bucket_name" {
+  description = "The name of the OCI Object Storage bucket."
+  value       = module.tfstate_backend.bucket_name
 }
 
-output "tfstate_backend_s3_bucket_id" {
-  description = "Terraform state S3 bucket ID"
-  value       = module.tfstate_backend.s3_bucket_id
+output "bucket_namespace" {
+  description = "The namespace of the OCI Object Storage bucket."
+  value       = module.tfstate_backend.bucket_namespace
 }
 
-output "tfstate_backend_s3_bucket_arn" {
-  description = "Terraform state S3 bucket ARN"
-  value       = module.tfstate_backend.s3_bucket_arn
+output "bucket_compartment_id" {
+  description = "The compartment ID of the OCI Object Storage bucket."
+  value       = module.tfstate_backend.bucket_compartment_id
 }
 
-output "tfstate_backend_dynamodb_table_name" {
-  description = "Terraform state DynamoDB table name"
+output "dynamodb_table_name" {
   value       = module.tfstate_backend.dynamodb_table_name
+  description = "DynamoDB table name"
 }
 
-output "tfstate_backend_dynamodb_table_id" {
-  description = "Terraform state DynamoDB table ID"
+output "dynamodb_table_id" {
   value       = module.tfstate_backend.dynamodb_table_id
+  description = "DynamoDB table ID"
 }
 
-output "tfstate_backend_dynamodb_table_arn" {
-  description = "Terraform state DynamoDB table ARN"
+output "dynamodb_table_arn" {
   value       = module.tfstate_backend.dynamodb_table_arn
-}
-
-output "tfstate_backend_access_role_arns" {
-  value       = { for k, v in aws_iam_role.default : k => v.arn }
-  description = "IAM Role ARNs for accessing the Terraform State Backend"
+  description = "DynamoDB table ARN"
 }

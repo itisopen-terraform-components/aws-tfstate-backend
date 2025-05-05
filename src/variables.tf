@@ -1,4 +1,41 @@
-variable "region" {
+variable "oci_namespace" {
+  description = "The name of the OCI namespace"
+  type        = string
+  default     = ""
+}
+
+variable "oci_tenancy_ocid" {
+  description = "The OCID of the tenancy"
+  type        = string
+}
+
+variable "oci_compartment_id" {
+  description = "The OCID of the compartment"
+  type        = string
+}
+
+variable "oci_user_ocid" {
+  description = "The OCID of the user"
+  type        = string
+}
+
+variable "oci_fingerprint" {
+  description = "The fingerprint for the API key"
+  type        = string
+}
+
+variable "oci_private_key_path" {
+  description = "The path to the private key file"
+  type        = string
+}
+
+variable "oci_region" {
+  description = "The OCI region to deploy resources in"
+  type        = string
+  default     = "eu-paris-1"
+}
+
+variable "aws_region" {
   type        = string
   description = "AWS Region"
 }
